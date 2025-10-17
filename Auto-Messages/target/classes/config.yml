@@ -1,0 +1,70 @@
+#######################################################################
+# AutoMessages — Configuration
+#
+# Units:
+# - interval and wait are in seconds.
+# Colors:
+# - Legacy & codes (e.g. &a, &l) and hex via &#RRGGBB (1.16+).
+# Links and commands:
+# - [Text](https://example.com) opens URL, [Text](/help) runs command.
+# - Backticks also work: `https://example.com` or `/help`.
+# Placeholders:
+# - %online%, %maxplayers%, {online}, {onlinePlayers}
+# Sounds:
+# - List: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+#######################################################################
+
+# AutoMessages groups below — add new groups or edit existing ones.
+# Use roughly the same format as the example groups.
+
+AutoMessages:
+  # Group "Discord": promo hint with link
+  Discord:
+    enabled: false        # enable/disable the group
+    interval: 300         # seconds between broadcasts
+    wait: 60              # seconds until the first broadcast after startup
+    permission: ''        # empty = send to all; else only players with permission
+    sound:
+      enabled: true       # optional sound on broadcast
+      name: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 1.0
+      pitch: 1.0
+    messages:
+      - '&6&lTKI Studios'
+      - ' '
+      - '&6&lJoin our &#3498dbDiscord &7for &bFree Plugins, Custom Orders&7, and &bUpdates'
+      - ' '
+      - '&6&lDiscord Link: &b[discord.gg/DCUQJuDbhB](https://discord.gg/DCUQJuDbhB)'
+      # or as a clickable link:
+      # - '&7Join: &b[discord.gg/DCUQJuDbhB](https://discord.gg/DCUQJuDbhB)'                                       '
+
+  # Group "Welcome": welcome messages for all players
+  Welcome:
+    enabled: false
+    interval: 600         # 10 minutes
+    wait: 120             # 2 minutes
+    permission: ''
+    sound:
+      enabled: true
+      name: ENTITY_PLAYER_LEVELUP
+      volume: 0.5
+      pitch: 1.2
+    messages:
+    - '&#8e44adWelcome to our server!'
+    - '&#f39c12Use &f/help &#f39c12to get started.'
+    - '&#e74c3cCurrent players: &f%online%&7/&f%maxplayers%'
+
+  # Group "StaffNotice": notices only for staff
+  StaffNotice:
+    enabled: false
+    interval: 1800        # 30 minutes
+    wait: 300             # 5 minutes
+    permission: 'automessages.staff'
+    sound:
+      enabled: true
+      name: ENTITY_WITHER_SPAWN
+      volume: 0.3
+      pitch: 0.8
+    messages:
+    - '&#ff0000&l[STAFF] &r&#e74c3cRemember to check for rule breakers!'
+    - '&#ff0000&l[STAFF] &r&#e74c3cUse /vanish when doing staff work.'

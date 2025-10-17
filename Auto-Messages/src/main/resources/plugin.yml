@@ -1,0 +1,16 @@
+name: AutoMessages
+version: 1.0.0
+main: com.automessages.Main
+author: tellegram
+website: https://github.com/Tellegram/AutoMessages
+api-version: 1.13
+load: POSTWORLD
+commands:
+  automessages:
+    description: AutoMessages admin commands
+    usage: /<command> reload
+    permission: automessages.admin
+permissions:
+  automessages.admin:
+    description: Allow using /automessages reload
+    default: op
